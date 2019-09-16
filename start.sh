@@ -16,6 +16,11 @@ sudo apt install vim
 sudo apt install curl
 sudo apt install git
 
+# Install necesary things ***************************
+# docker -> https://docs.docker.com/install/linux/docker-ce/ubuntu/
+# compose -> https://docs.docker.com/compose/install/
+
+
 # add vim config in ~/.vimrc ************************
 echo "*** Go ~/.vimrc ***"
 
@@ -83,6 +88,8 @@ echo "*** Go ~/.vimrc ***"
 # "  set termguicolors
 # "endif
 
+# curl -fLo ~/.vim/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 # :PlugInstall!
 
 
@@ -112,5 +119,16 @@ echo "*** Go ~/.gitconfig***"
 #   name = UserName
 #   email = email@gmail.com
 
+# update colors of terminal with solarized ******************************
+sudo apt-get install dconf-cli
+git clone https://github.com/aruhier/gnome-terminal-colors-solarized.git
+cd gnome-terminal-colors-solarized
+./install.sh
+
+# instal silversearcher-ag
+sudo apt-get install silversearcher-ag
+
 # crate folders ******************************
 mkdir ~/Repos/
+
+# install asdf ******************************

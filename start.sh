@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# see this -> https://github.com/johnf9896/dotfiles/blob/master/install.sh
+
 # install chrome ***********************************
 echo "*** Intsalling google chrome ***"
 echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
@@ -20,6 +22,18 @@ sudo apt install git
 # docker -> https://docs.docker.com/install/linux/docker-ce/ubuntu/
 # compose -> https://docs.docker.com/compose/install/
 
+# add tmux config in ~/.tmux.conf
+set-option -g prefix2 C-a
+set-option -g mouse on
+bind -n C-k send-keys -R \; clear-history
+bind-key -n M-D split-window
+bind-key -n M-d split-window -h
+bind-key -n M-k clear-history
+set -g history-limit 99999
+set -s escape-time 0
+setw -g mode-keys vi
+set-option -ga terminal-overrides ",xterm-256color:Tc"
+bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
 
 # add vim config in ~/.vimrc ************************
 echo "*** Go ~/.vimrc ***"
@@ -132,3 +146,7 @@ sudo apt-get install silversearcher-ag
 mkdir ~/Repos/
 
 # install asdf ******************************
+
+# install flameshot *************************
+# https://ubunlog.com/flameshot-herramienta-capturas-pantalla/
+#sudo dpkg -i flameshot_0.5.0_amd64.deb

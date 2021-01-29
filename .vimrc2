@@ -1,0 +1,55 @@
+syntax on
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set nowrap
+set number
+set list
+set listchars=eol:·
+set autoindent
+"set mouse=a
+set fillchars+=vert:\
+set clipboard=unnamed
+set encoding=utf-8
+
+let g:airline_powerline_fonts=1
+autocmd BufWritePre <buffer> :%s/\s\+$//e
+
+let mapleader=","
+let taboo_tab_format=" %N. %f%m "
+
+" Taboo
+set sessionoptions+=tabpages,globals
+cabbrev tr TabooRename
+
+" tab switching shortcuts
+noremap <leader>1 1gt
+noremap <leader>2 2gt
+noremap <leader>3 3gt
+noremap <leader>4 4gt
+noremap <leader>5 5gt
+noremap <leader>6 6gt
+noremap <leader>7 7gt
+noremap <leader>8 8gt
+noremap <leader>9 9gt
+noremap <leader>0 :tablast<cr>
+
+map <C-n> :NERDTreeToggle<CR>
+map <C-y> <Plug>(easymotion-s)
+
+call plug#begin('~/.vim/plugged')
+  Plug 'mattn/emmet-vim'
+  Plug 'tpope/vim-sensible'
+  Plug 'ap/vim-css-color'
+  Plug 'mattn/emmet-vim'
+  Plug 'JulesWang/css.vim'
+  Plug 'cakebaker/scss-syntax.vim'
+call plug#end()
+
+if &t_Co > 2
+  highlight ExtraWhitespace ctermbg=88 guibg=#fb4934
+  match ExtraWhitespace /\s\+$/
+else
+  set listchars=trail:~
+  set list
+endif
